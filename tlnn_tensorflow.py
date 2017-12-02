@@ -48,7 +48,7 @@ session.run(tf.initialize_all_variables())
 ## 5. train
 training_size = 300
 training_inputs = [[0.1, 0.2], [0.2, 0.3], [0.3, 0.4], [0.4, 0.5], [0.5, 0.6], [0.6, 0.1]] * training_size
-training_activation = [[0.3], [0.4], [0.5], [0.6], [0.1], [0.2]] * training_size
+training_outputs = [[0.3], [0.4], [0.5], [0.6], [0.1], [0.2]] * training_size
 
 epochs = 20000
 
@@ -56,7 +56,7 @@ for epoch in range(epochs):
 	_, error_rate = session.run(	[step, error],
 									feed_dict = 
 									{ 	inputs: np.array(training_inputs),
-										outputs: np.array(training_activation)
+										outputs: np.array(training_outputs)
 									}
 								)
 
